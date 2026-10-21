@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -10,11 +11,11 @@ const skills = [
       "Test Case Design",
       "Test Scenarios",
       "Functional Testing",
+      "UI Testing",
       "Regression Testing",
       "Smoke Testing",
       "Exploratory Testing",
-      "UI Testing",
-      "Bug Reporting",
+      "Defect Reporting",
     ],
   },
   {
@@ -22,30 +23,19 @@ const skills = [
     items: [
       "Selenium WebDriver",
       "Playwright",
+      "Python",
       "Pytest",
-      "Automation Scripts",
-      "Cross-Browser Testing",
+      "Browser Automation",
     ],
   },
   {
-    category: "Performance & API",
+    category: "API & Performance Testing",
     items: [
-      "Apache JMeter",
       "Postman",
+      "Apache JMeter",
       "API Testing",
       "Load Testing",
       "Response Validation",
-    ],
-  },
-  {
-    category: "Tools & Technologies",
-    items: [
-      "Python",
-      "MySQL",
-      "C Programming",
-      "Git",
-      "GitHub",
-      "Jira",
     ],
   },
   {
@@ -59,89 +49,100 @@ const skills = [
       "Test Documentation",
     ],
   },
+  {
+    category: "Programming & Tools",
+    items: [
+      "Python",
+      "MySQL",
+      "C Programming",
+      "Git",
+      "GitHub",
+      "Jira",
+    ],
+  },
 ];
 
 const projects = [
   {
     number: "01",
-    title: "Website Manual Testing",
+    title: "SMEC Technologies Website",
     type: "Manual Testing",
-    subtitle: "Functional validation and defect reporting",
+    subtitle: "Functional testing, test cases and defect reporting",
     overview:
-      "Performed manual testing of website features to verify that the application behaves according to its requirements and provides a consistent user experience.",
+      "Performed manual testing of website functionality and user workflows to evaluate application behavior, usability, and consistency.",
     objective:
-      "Identify functional issues, usability problems, and inconsistencies before the application reaches end users.",
+      "Verify that website features behave as expected and identify defects that could affect the user experience.",
     work: [
-      "Reviewed website pages, navigation menus, links, and forms.",
-      "Prepared and executed test cases based on expected functionality.",
-      "Performed functional, UI, exploratory, and regression testing.",
-      "Documented defects with reproducible steps and expected versus actual results.",
-      "Retested fixes and checked for regressions.",
+      "Reviewed website pages, navigation menus, forms, links, and interactive elements.",
+      "Prepared and executed test cases for expected and negative scenarios.",
+      "Performed functional, UI, exploratory, regression, and compatibility testing.",
+      "Recorded defects with reproducible steps, expected results, actual results, severity, and priority.",
+      "Retested reported defects and checked affected functionality.",
     ],
     tools: ["Manual Testing", "Test Cases", "Excel", "Browser DevTools"],
     methodology: [
-      "Requirement understanding",
-      "Test scenario preparation",
-      "Test case execution",
-      "Defect reporting",
-      "Retesting and regression testing",
+      "Understand requirements",
+      "Identify test scenarios",
+      "Prepare and execute test cases",
+      "Report and track defects",
+      "Retest fixes and perform regression testing",
     ],
     outcome:
-      "Organized test documentation and identified issues to support application quality improvement.",
+      "Produced structured test documentation and identified issues to support website quality improvement.",
   },
   {
     number: "02",
     title: "Website Automation Testing",
     type: "Automation Testing",
-    subtitle: "Browser automation using Python",
+    subtitle: "Browser automation using Playwright, Selenium and Python",
     overview:
-      "Developed and executed automated browser tests to validate website workflows and reduce repetitive manual verification.",
+      "Practiced automated browser testing for website workflows, focusing on repeatable checks and validating expected application behavior.",
     objective:
-      "Automate repeatable test scenarios and verify that important website functionality works consistently.",
+      "Reduce repetitive manual checks and improve consistency when validating selected website workflows.",
     work: [
-      "Created browser automation scripts for selected workflows.",
-      "Used locators and browser interactions to execute test steps.",
-      "Validated page elements, navigation, and expected results.",
-      "Organized automated tests and reviewed failures.",
-      "Executed tests repeatedly to check application behavior.",
+      "Created automation scripts for selected website scenarios.",
+      "Used browser locators and interactions to perform test steps.",
+      "Validated page elements, navigation, and expected outcomes.",
+      "Used assertions to verify application behavior.",
+      "Reviewed execution results and investigated test failures.",
     ],
     tools: ["Playwright", "Selenium WebDriver", "Python", "Pytest"],
     methodology: [
-      "Identify repeatable test scenarios",
+      "Select suitable test scenarios",
       "Design automation steps",
       "Implement browser interactions",
-      "Add assertions",
-      "Execute and analyze results",
+      "Add assertions and validations",
+      "Execute tests and review results",
     ],
     outcome:
-      "Built reusable automation checks for selected website workflows and practiced browser-based test automation.",
+      "Built reusable browser checks and strengthened practical understanding of UI test automation.",
   },
   {
     number: "03",
     title: "Safety-Enhanced Smart Iron",
     type: "Embedded Systems",
-    subtitle: "ESP32-based safety and temperature control",
+    subtitle: "ESP32-based safety and automatic lifting mechanism",
     overview:
-      "Designed a smart ironing device concept to reduce the risk of clothes burning when an iron is left unattended.",
+      "Developed a smart ironing device concept designed to reduce the risk of clothes burning when an iron is left unattended.",
     objective:
-      "Improve ironing safety by detecting inactivity or unsafe conditions and controlling the iron's position and power.",
+      "Improve ironing safety by detecting relevant conditions and controlling the iron's position and power.",
     work: [
       "Integrated an ESP32 microcontroller with sensing components.",
-      "Used servo motors for the self-lifting mechanism.",
-      "Implemented control logic for motion or tilt-related conditions.",
-      "Explored temperature monitoring and power switching.",
-      "Worked on hardware integration and system testing.",
+      "Designed a servo-based automatic lifting mechanism.",
+      "Worked with touch and tilt sensing for condition detection.",
+      "Explored temperature monitoring and solid-state relay power control.",
+      "Contributed to hardware integration, control logic, and system testing.",
     ],
-    tools: ["ESP32", "Arduino IDE", "Servo Motors", "Sensors", "SSR"],
+    tools: ["ESP32", "Arduino IDE", "Servo Motors", "Touch Sensor", "Tilt Sensor", "SSR"],
     methodology: [
-      "Identify the safety problem",
+      "Define the safety problem",
       "Design the system architecture",
       "Integrate hardware components",
       "Implement embedded control logic",
       "Test system responses",
     ],
     outcome:
-      "Developed a prototype concept combining embedded control and a mechanical lifting mechanism to improve ironing safety.",
+      "Developed a prototype concept combining embedded control and automatic lifting to improve ironing safety.",
   },
 ];
 
@@ -152,10 +153,10 @@ const experience = [
     location: "Kochi, Kerala",
     period: "Jul 2026 – Oct 2026",
     details: [
-      "Practiced manual software testing and test case preparation.",
+      "Gained practical exposure to manual software testing and test case preparation.",
       "Worked with SDLC, STLC, and Agile testing concepts.",
-      "Executed functional test cases and documented observations.",
-      "Learned defect reporting, retesting, and regression testing.",
+      "Executed functional test cases and documented results.",
+      "Practiced defect reporting, retesting, and regression testing.",
     ],
   },
 ];
@@ -166,55 +167,23 @@ const education = [
     institution: "College of Engineering Chengannur",
     period: "2022 – 2026",
     details:
-      "KTU 2019 Scheme · Electronics, embedded systems, and software testing interests",
+      "KTU 2019 Scheme · Electronics, embedded systems, and software testing interests.",
   },
 ];
 
+const navigation = [
+  ["About", "#about"],
+  ["Skills", "#skills"],
+  ["Experience", "#experience"],
+  ["Projects", "#projects"],
+  ["Education", "#education"],
+  ["Contact", "#contact"],
+];
+
+/* Content is always visible; no observer can leave it hidden. */
 function Reveal({ children, className = "" }) {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const element = document.getElementById(
-      `reveal-${Reveal.nextId++}`
-    );
-
-    if (!element) return undefined;
-
-    if (!("IntersectionObserver" in window)) {
-      setVisible(true);
-      return undefined;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.12 }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const id = useState(
-    () => `reveal-${Reveal.nextId++}`
-  )[0];
-
-  return (
-    <div
-      id={id}
-      className={`reveal ${visible ? "reveal-visible" : ""} ${className}`}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`reveal ${className}`}>{children}</div>;
 }
-
-Reveal.nextId = 1;
 
 function SectionTitle({ eyebrow, title, description }) {
   return (
@@ -253,7 +222,7 @@ function ProjectModal({ project, onClose }) {
         if (event.target === event.currentTarget) onClose();
       }}
     >
-      <div
+      <article
         className="project-modal"
         role="dialog"
         aria-modal="true"
@@ -285,9 +254,7 @@ function ProjectModal({ project, onClose }) {
         <div className="modal-section">
           <h3>Work Performed</h3>
           <ul>
-            {project.work.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            {project.work.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </div>
 
@@ -295,9 +262,7 @@ function ProjectModal({ project, onClose }) {
           <h3>Tools & Technologies</h3>
           <div className="tag-list">
             {project.tools.map((tool) => (
-              <span className="tag" key={tool}>
-                {tool}
-              </span>
+              <span className="tag" key={tool}>{tool}</span>
             ))}
           </div>
         </div>
@@ -305,9 +270,7 @@ function ProjectModal({ project, onClose }) {
         <div className="modal-section">
           <h3>Methodology</h3>
           <ol>
-            {project.methodology.map((step) => (
-              <li key={step}>{step}</li>
-            ))}
+            {project.methodology.map((step) => <li key={step}>{step}</li>)}
           </ol>
         </div>
 
@@ -315,7 +278,7 @@ function ProjectModal({ project, onClose }) {
           <h3>Outcome</h3>
           <p>{project.outcome}</p>
         </div>
-      </div>
+      </article>
     </div>
   );
 }
@@ -328,18 +291,11 @@ export default function App() {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      document.documentElement.style.setProperty(
-        "--mouse-x",
-        `${event.clientX}px`
-      );
-      document.documentElement.style.setProperty(
-        "--mouse-y",
-        `${event.clientY}px`
-      );
+      document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
+      document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
@@ -351,7 +307,7 @@ export default function App() {
 
       <header className="site-header">
         <nav className="nav-container" aria-label="Main navigation">
-          <a href="#home" className="brand" onClick={closeMenu}>
+          <a className="brand" href="#home" onClick={closeMenu}>
             MRN<span>.</span>
           </a>
 
@@ -362,23 +318,13 @@ export default function App() {
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
           >
-            {menuOpen ? "✕" : "☰"}
+            {menuOpen ? "×" : "☰"}
           </button>
 
           <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
-            {[
-              ["About", "#about"],
-              ["Skills", "#skills"],
-              ["Experience", "#experience"],
-              ["Projects", "#projects"],
-              ["Education", "#education"],
-              ["Contact", "#contact"],
-            ].map(([label, href]) => (
-              <a href={href} key={href} onClick={closeMenu}>
-                {label}
-              </a>
+            {navigation.map(([label, href]) => (
+              <a href={href} key={href} onClick={closeMenu}>{label}</a>
             ))}
-
             <a
               className="nav-resume"
               href={resumeUrl}
@@ -399,9 +345,7 @@ export default function App() {
               SOFTWARE TESTING · QUALITY ASSURANCE
             </p>
 
-            <h1 className="hero-name">
-              MANU R NAIR<span>.</span>
-            </h1>
+            <h1 className="hero-name">MANU R NAIR<span>.</span></h1>
 
             <h2 className="hero-role">
               Software Tester <span>&</span> QA Enthusiast
@@ -429,18 +373,10 @@ export default function App() {
             </div>
 
             <div className="hero-socials">
-              <a
-                href="https://github.com/manu-r-nair"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://github.com/manu-r-nair" target="_blank" rel="noreferrer">
                 GitHub ↗
               </a>
-              <a
-                href="https://www.linkedin.com/in/manu-r-nair/"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://www.linkedin.com/in/manu-r-nair/" target="_blank" rel="noreferrer">
                 LinkedIn ↗
               </a>
               <a href="mailto:manurnair3@gmail.com">Email ↗</a>
@@ -461,42 +397,28 @@ export default function App() {
 
               <div className="hero-card-body">
                 <p className="code-muted">// quality starts here</p>
-                <p>
-                  <span className="code-purple">const</span>{" "}
+                <p><span className="code-purple">const</span>{" "}
                   <span className="code-blue">tester</span> = {"{"}
                 </p>
-                <p className="code-indent">
-                  focus: <span className="code-green">"Quality"</span>,
-                </p>
-                <p className="code-indent">
-                  testing: <span className="code-green">"Manual + Automation"</span>,
-                </p>
-                <p className="code-indent">
-                  mindset: <span className="code-green">"Find the edge cases"</span>,
-                </p>
-                <p className="code-indent">
-                  goal: <span className="code-green">"Reliable software"</span>
-                </p>
+                <p className="code-indent">focus: <span className="code-green">"Quality"</span>,</p>
+                <p className="code-indent">testing: <span className="code-green">"Manual + Automation"</span>,</p>
+                <p className="code-indent">mindset: <span className="code-green">"Find the edge cases"</span>,</p>
+                <p className="code-indent">goal: <span className="code-green">"Reliable software"</span></p>
                 <p>{"};"}</p>
 
                 <div className="terminal-divider" />
-
                 <div className="terminal-status">
                   <span className="status-dot" />
-                  <span>Ready to test</span>
+                  Ready to test
                 </div>
               </div>
             </div>
 
-            <div className="floating-badge badge-top">
-              <span>✓</span> Quality focused
-            </div>
-            <div className="floating-badge badge-bottom">
-              <span>⌘</span> Test automation
-            </div>
+            <div className="floating-badge badge-top"><span>✓</span> Quality focused</div>
+            <div className="floating-badge badge-bottom"><span>⌘</span> Test automation</div>
           </Reveal>
 
-          <a href="#about" className="scroll-indicator">
+          <a className="scroll-indicator" href="#about">
             <span className="scroll-line" />
             Scroll to explore
           </a>
@@ -516,41 +438,31 @@ export default function App() {
               <p>
                 I am a B.Tech Electronics and Communication Engineering
                 student with a strong interest in software testing and quality
-                assurance. My background helps me approach problems
+                assurance. My academic background helps me approach problems
                 analytically and understand how systems behave.
               </p>
               <p>
                 I have explored manual testing, test case preparation, defect
                 reporting, and browser automation using Selenium WebDriver and
-                Playwright. I am continuing to strengthen my testing skills and
-                practical understanding of software development workflows.
+                Playwright. I am continuing to strengthen my testing skills
+                and practical understanding of software development workflows.
               </p>
-              <a className="text-link" href="#contact">
-                Let&apos;s connect <span>→</span>
-              </a>
+              <a className="text-link" href="#contact">Let&apos;s connect <span>→</span></a>
             </Reveal>
 
             <Reveal className="about-stats">
-              <div className="stat-card">
-                <span className="stat-number">01</span>
-                <span className="stat-label">Manual testing</span>
-                <p>Structured test execution and defect reporting</p>
-              </div>
-              <div className="stat-card">
-                <span className="stat-number">02</span>
-                <span className="stat-label">Automation</span>
-                <p>Browser testing with modern automation tools</p>
-              </div>
-              <div className="stat-card">
-                <span className="stat-number">03</span>
-                <span className="stat-label">Problem solving</span>
-                <p>Analytical thinking and attention to detail</p>
-              </div>
-              <div className="stat-card">
-                <span className="stat-number">04</span>
-                <span className="stat-label">Teamwork</span>
-                <p>Communication and student team leadership</p>
-              </div>
+              {[
+                ["01", "Manual testing", "Structured test execution and defect reporting"],
+                ["02", "Automation", "Browser testing with modern automation tools"],
+                ["03", "Problem solving", "Analytical thinking and attention to detail"],
+                ["04", "Teamwork", "Communication and student team leadership"],
+              ].map(([number, label, description]) => (
+                <div className="stat-card" key={number}>
+                  <span className="stat-number">{number}</span>
+                  <span className="stat-label">{label}</span>
+                  <p>{description}</p>
+                </div>
+              ))}
             </Reveal>
           </div>
         </section>
@@ -568,17 +480,12 @@ export default function App() {
             {skills.map((group, index) => (
               <Reveal className="skill-card" key={group.category}>
                 <div className="skill-card-heading">
-                  <span className="skill-index">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <span className="skill-index">{String(index + 1).padStart(2, "0")}</span>
                   <h3>{group.category}</h3>
                 </div>
-
                 <div className="tag-list">
                   {group.items.map((skill) => (
-                    <span className="tag" key={skill}>
-                      {skill}
-                    </span>
+                    <span className="tag" key={skill}>{skill}</span>
                   ))}
                 </div>
               </Reveal>
@@ -586,15 +493,12 @@ export default function App() {
           </div>
         </section>
 
-        <section
-          className="section-container section-block"
-          id="experience"
-        >
+        <section className="section-container section-block" id="experience">
           <Reveal>
             <SectionTitle
               eyebrow="03 / EXPERIENCE"
               title="Learning through practice."
-              description="My software testing experience and practical exposure."
+              description="Software testing experience and practical exposure."
             />
           </Reveal>
 
@@ -602,24 +506,19 @@ export default function App() {
             {experience.map((item) => (
               <Reveal className="timeline-item" key={item.company}>
                 <div className="timeline-marker" />
-                <div className="experience-card">
+                <article className="experience-card">
                   <div className="experience-top">
                     <div>
                       <p className="eyebrow">{item.period}</p>
                       <h3>{item.role}</h3>
-                      <p className="experience-company">
-                        {item.company} · {item.location}
-                      </p>
+                      <p className="experience-company">{item.company} · {item.location}</p>
                     </div>
                     <span className="experience-symbol">↗</span>
                   </div>
-
                   <ul>
-                    {item.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
+                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
                   </ul>
-                </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -647,11 +546,9 @@ export default function App() {
                     <span className="project-number">{project.number}</span>
                     <span className="project-arrow">↗</span>
                   </div>
-
                   <span className="project-type">{project.type}</span>
                   <h3>{project.title}</h3>
                   <p>{project.subtitle}</p>
-
                   <div className="project-card-footer">
                     <span>View project details</span>
                     <span>→</span>
@@ -700,26 +597,16 @@ export default function App() {
           </Reveal>
         </section>
 
-        <section
-          className="section-container section-block contact-section"
-          id="contact"
-        >
+        <section className="section-container section-block contact-section" id="contact">
           <Reveal className="contact-card">
             <p className="eyebrow">06 / CONTACT</p>
-            <h2>
-              Let&apos;s build something
-              <span> reliable.</span>
-            </h2>
+            <h2>Let&apos;s build something <span>reliable.</span></h2>
             <p>
               Looking for a software testing opportunity where I can learn,
               contribute, and help improve product quality.
             </p>
-
             <div className="contact-actions">
-              <a
-                className="button button-primary"
-                href="mailto:manurnair3@gmail.com"
-              >
+              <a className="button button-primary" href="mailto:manurnair3@gmail.com">
                 Email Me ↗
               </a>
               <a
@@ -731,24 +618,18 @@ export default function App() {
                 LinkedIn ↗
               </a>
             </div>
-
             <p className="contact-email">manurnair3@gmail.com</p>
           </Reveal>
         </section>
       </main>
 
       <footer className="site-footer">
-        <a href="#home" className="brand">
-          MRN<span>.</span>
-        </a>
+        <a href="#home" className="brand">MRN<span>.</span></a>
         <p>Designed with curiosity. Built with attention to detail.</p>
         <p>© {new Date().getFullYear()} Manu R Nair</p>
       </footer>
 
-      <ProjectModal
-        project={selectedProject}
-        onClose={closeProjectModal}
-      />
+      <ProjectModal project={selectedProject} onClose={closeProjectModal} />
     </div>
   );
 }
