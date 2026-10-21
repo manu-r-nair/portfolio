@@ -1,16 +1,9 @@
-
-{
-  "name": "my-portfolio",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "homepage": "https://manu-r-nair.github.io/portfolio",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
+"devDependencies": {
+  "@vitejs/plugin-react": "^6.0.1",
+  "vite": "^8.0.12",
+  "eslint": "^10.3.0",
+  "eslint-plugin-react-hooks": "^7.1.1",
+  "eslint-plugin-react-refresh": "^0.5.2",
+  "globals": "^17.6.0",
+  "gh-pages": "^6.3.0"
 }
