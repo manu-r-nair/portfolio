@@ -164,11 +164,9 @@ function App() {
 
               <p className="hero-overline">HELLO WORLD, I'M</p>
 
-              <h1>
-                MANU R
-                <br />
-                <span>NAIR.</span>
-              </h1>
+             <h1 className="hero-name">
+              MANU R NAIR<span>.</span>
+            </h1>
 
               <div className="role">
                 <span className="role-line" />
