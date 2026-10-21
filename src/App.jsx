@@ -51,14 +51,7 @@ const skills = [
   },
   {
     category: "Programming & Tools",
-    items: [
-      "Python",
-      "MySQL",
-      "C Programming",
-      "Git",
-      "GitHub",
-      "Jira",
-    ],
+    items: ["Python", "MySQL", "C Programming", "Git", "GitHub", "Jira"],
   },
 ];
 
@@ -133,7 +126,14 @@ const projects = [
       "Explored temperature monitoring and solid-state relay power control.",
       "Contributed to hardware integration, control logic, and system testing.",
     ],
-    tools: ["ESP32", "Arduino IDE", "Servo Motors", "Touch Sensor", "Tilt Sensor", "SSR"],
+    tools: [
+      "ESP32",
+      "Arduino IDE",
+      "Servo Motors",
+      "Touch Sensor",
+      "Tilt Sensor",
+      "SSR",
+    ],
     methodology: [
       "Define the safety problem",
       "Design the system architecture",
@@ -180,7 +180,6 @@ const navigation = [
   ["Contact", "#contact"],
 ];
 
-/* Content is always visible; no observer can leave it hidden. */
 function Reveal({ children, className = "" }) {
   return <div className={`reveal ${className}`}>{children}</div>;
 }
@@ -254,7 +253,9 @@ function ProjectModal({ project, onClose }) {
         <div className="modal-section">
           <h3>Work Performed</h3>
           <ul>
-            {project.work.map((item) => <li key={item}>{item}</li>)}
+            {project.work.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
 
@@ -270,7 +271,9 @@ function ProjectModal({ project, onClose }) {
         <div className="modal-section">
           <h3>Methodology</h3>
           <ol>
-            {project.methodology.map((step) => <li key={step}>{step}</li>)}
+            {project.methodology.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
           </ol>
         </div>
 
@@ -287,12 +290,16 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeProjectModal = () => setSelectedProject(null);
-
   useEffect(() => {
     const handleMouseMove = (event) => {
-      document.documentElement.style.setProperty("--mouse-x", `${event.clientX}px`);
-      document.documentElement.style.setProperty("--mouse-y", `${event.clientY}px`);
+      document.documentElement.style.setProperty(
+        "--mouse-x",
+        `${event.clientX}px`
+      );
+      document.documentElement.style.setProperty(
+        "--mouse-y",
+        `${event.clientY}px`
+      );
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -300,6 +307,7 @@ export default function App() {
   }, []);
 
   const closeMenu = () => setMenuOpen(false);
+  const closeProjectModal = () => setSelectedProject(null);
 
   return (
     <div className="portfolio">
@@ -323,7 +331,9 @@ export default function App() {
 
           <div className={`nav-links ${menuOpen ? "nav-open" : ""}`}>
             {navigation.map(([label, href]) => (
-              <a href={href} key={href} onClick={closeMenu}>{label}</a>
+              <a href={href} key={href} onClick={closeMenu}>
+                {label}
+              </a>
             ))}
             <a
               className="nav-resume"
@@ -373,10 +383,18 @@ export default function App() {
             </div>
 
             <div className="hero-socials">
-              <a href="https://github.com/manu-r-nair" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/manu-r-nair"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub ↗
               </a>
-              <a href="https://www.linkedin.com/in/manu-r-nair/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/manu-r-nair/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 LinkedIn ↗
               </a>
               <a href="mailto:manurnair3@gmail.com">Email ↗</a>
@@ -384,38 +402,30 @@ export default function App() {
           </Reveal>
 
           <Reveal className="hero-visual">
+            <div className="profile-photo-glow" />
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
 
-            <div className="hero-card">
-              <div className="hero-card-top">
-                <span className="terminal-dot" />
-                <span className="terminal-dot" />
-                <span className="terminal-dot" />
-                <span className="terminal-label">qa_profile.exe</span>
+            <div className="profile-photo-wrap">
+              <div className="profile-photo-ring">
+                <img
+                  className="profile-photo"
+                  src={`${import.meta.env.BASE_URL}manu.jpeg`}
+                  alt="Manu R Nair — Software Tester and QA Enthusiast"
+                  fetchPriority="high"
+                />
               </div>
 
-              <div className="hero-card-body">
-                <p className="code-muted">// quality starts here</p>
-                <p><span className="code-purple">const</span>{" "}
-                  <span className="code-blue">tester</span> = {"{"}
-                </p>
-                <p className="code-indent">focus: <span className="code-green">"Quality"</span>,</p>
-                <p className="code-indent">testing: <span className="code-green">"Manual + Automation"</span>,</p>
-                <p className="code-indent">mindset: <span className="code-green">"Find the edge cases"</span>,</p>
-                <p className="code-indent">goal: <span className="code-green">"Reliable software"</span></p>
-                <p>{"};"}</p>
+              <div className="profile-badge profile-badge-top">
+                <span className="profile-badge-dot" />
+                Software Testing
+              </div>
 
-                <div className="terminal-divider" />
-                <div className="terminal-status">
-                  <span className="status-dot" />
-                  Ready to test
-                </div>
+              <div className="profile-badge profile-badge-bottom">
+                <span>✦</span>
+                Quality Assurance
               </div>
             </div>
-
-            <div className="floating-badge badge-top"><span>✓</span> Quality focused</div>
-            <div className="floating-badge badge-bottom"><span>⌘</span> Test automation</div>
           </Reveal>
 
           <a className="scroll-indicator" href="#about">
@@ -447,7 +457,9 @@ export default function App() {
                 Playwright. I am continuing to strengthen my testing skills
                 and practical understanding of software development workflows.
               </p>
-              <a className="text-link" href="#contact">Let&apos;s connect <span>→</span></a>
+              <a className="text-link" href="#contact">
+                Let&apos;s connect <span>→</span>
+              </a>
             </Reveal>
 
             <Reveal className="about-stats">
@@ -480,7 +492,9 @@ export default function App() {
             {skills.map((group, index) => (
               <Reveal className="skill-card" key={group.category}>
                 <div className="skill-card-heading">
-                  <span className="skill-index">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="skill-index">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <h3>{group.category}</h3>
                 </div>
                 <div className="tag-list">
@@ -511,12 +525,16 @@ export default function App() {
                     <div>
                       <p className="eyebrow">{item.period}</p>
                       <h3>{item.role}</h3>
-                      <p className="experience-company">{item.company} · {item.location}</p>
+                      <p className="experience-company">
+                        {item.company} · {item.location}
+                      </p>
                     </div>
                     <span className="experience-symbol">↗</span>
                   </div>
                   <ul>
-                    {item.details.map((detail) => <li key={detail}>{detail}</li>)}
+                    {item.details.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
                   </ul>
                 </article>
               </Reveal>
@@ -597,7 +615,10 @@ export default function App() {
           </Reveal>
         </section>
 
-        <section className="section-container section-block contact-section" id="contact">
+        <section
+          className="section-container section-block contact-section"
+          id="contact"
+        >
           <Reveal className="contact-card">
             <p className="eyebrow">06 / CONTACT</p>
             <h2>Let&apos;s build something <span>reliable.</span></h2>
@@ -629,7 +650,10 @@ export default function App() {
         <p>© {new Date().getFullYear()} Manu R Nair</p>
       </footer>
 
-      <ProjectModal project={selectedProject} onClose={closeProjectModal} />
+      <ProjectModal
+        project={selectedProject}
+        onClose={closeProjectModal}
+      />
     </div>
   );
 }
