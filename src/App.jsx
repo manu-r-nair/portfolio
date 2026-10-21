@@ -264,7 +264,7 @@ function App() {
       window.removeEventListener('pointermove', movePointer)
   }, [])
 
-  const resumeUrl = `${import.meta.env.BASE_URL}Manu%20R%20Nair.pdf`
+  const resumeUrl = `${import.meta.env.BASE_URL}Manu_R_Nair_Resume.pdf`
 
   return (
     <div
